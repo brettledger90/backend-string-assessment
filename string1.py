@@ -25,7 +25,12 @@
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
     """Your code goes here.  Edit this docstring."""
-    return
+    if count > 9:
+        amount = 'many'
+    else:
+        amount = str(count)
+    
+    return 'Number of donuts: ' + amount
 
 
 # B. both_ends
@@ -35,7 +40,11 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 def both_ends(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    if len(s) < 2:
+        return ''
+    
+    return s[0:2] + s[-2:]
+    
 
 
 # C. fix_start
@@ -49,8 +58,12 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    x = s[0]
+    length = len(s)
+    s = s.replace(x, '*')
+    s = x + s[1:]
 
+    return s
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
@@ -61,7 +74,10 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
     """Your code goes here.  Edit this docstring."""
-    return
+    new_a = b[:2] + a[2:]
+    new_b = a[:2] + b[2:]
+
+    return new_a + ' ' + new_b
 
 
 # Provided simple test() function used in main() to print
